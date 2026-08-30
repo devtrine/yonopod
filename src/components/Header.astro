@@ -1,0 +1,114 @@
+---
+// Header.astro - White Navigation with Dark Blue Border, Telemetry Status and Mobile Drawer
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#0a0e1a] transition-all duration-300">
+  <div class="max-w-[1586px] mx-auto px-4 sm:px-6 lg:px-9 h-[72px] flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#" class="hidden flex items-center gap-3 group focus:outline-none p-1">
+      <!-- Yonopod Geometric SVG Glyph -->
+      <div class="relative w-9 h-9 flex items-center justify-center">
+        <svg viewBox="0 0 100 100" class="w-9 h-9 transition-transform duration-300 group-hover:scale-105" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer triangular wings -->
+          <polygon points="50,8 60,30 40,30" fill="#06b6d4" />
+          <polygon points="12,74 34,70 24,52" fill="#06b6d4" />
+          <polygon points="88,74 76,52 66,70" fill="#06b6d4" />
+          <!-- Cyan Ring Body with locator tip -->
+          <path d="M50 14 C30 14 14 30 14 50 C14 66 24 79 38 84 L50 94 L62 84 C76 79 86 66 86 50 C86 30 70 14 50 14 Z" fill="#22d3ee" />
+          <!-- Inner Dark Core -->
+          <circle cx="50" cy="50" r="22" fill="#0a0e1a" />
+          <!-- Center Cyan Iris / Pod Pupil -->
+          <circle cx="50" cy="50" r="10" fill="#06b6d4" />
+        </svg>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-bold text-lg tracking-tight text-[#0a0e1a] font-sans flex items-center gap-1.5">
+          YONOPOD
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-7 text-[14px] font-medium text-slate-600">
+      <a href="#solusi" class="hover:text-[#0a0e1a] transition-colors duration-150 storage-link"><span>Solusi</span></a>
+      <a href="#fitur" class="hover:text-[#0a0e1a] transition-colors duration-150 storage-link"><span>Fitur</span></a>
+      <a href="#kalkulator-saldo" class="text-[#0284c7] hover:text-[#0369a1] transition-colors duration-150 storage-link font-semibold flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 bg-[#06b6d4]"></span>
+        <span>Top-Up Saldo</span>
+      </a>
+      <a href="#inovasi-mendatang" class="hover:text-[#0a0e1a] transition-colors duration-150 storage-link"><span>Mendatang</span></a>
+      <a href="#arsitektur" class="hover:text-[#0a0e1a] transition-colors duration-150 storage-link"><span>Arsitektur</span></a>
+      <a href="#roadmap" class="hover:text-[#0a0e1a] transition-colors duration-150 storage-link"><span>Roadmap</span></a>
+      <a href="#faq" class="hover:text-[#0a0e1a] transition-colors duration-150 storage-link"><span>FAQ</span></a>
+    </nav>
+
+    <!-- Header Action Button -->
+    <div class="hidden sm:flex items-center gap-3">
+      <a href="#kalkulator-saldo" class="action-link group">
+        <span class="move-text text-sm font-semibold text-[#0a0e1a] group-hover:text-[#2563eb]">Coba Simulasi</span>
+        <span class="move-arrow"></span>
+      </a>
+    </div>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button id="mobile-menu-btn" aria-label="Toggle menu" class="lg:hidden p-2 text-[#0a0e1a] hover:bg-slate-100 focus:outline-none">
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="hamburger-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="close-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-[#0a0e1a] px-6 py-6 transition-all duration-300 shadow-xl">
+    <div class="flex flex-col gap-4 text-base font-medium text-slate-700">
+      <div class="flex items-center gap-2 pb-3 border-b border-[#0a0e1a]/15 text-xs font-mono text-slate-500">
+        <span class="telemetry-live-dot"></span>
+        <span>Sistem Aktif: 99.99% Uptime &bull; Jakarta Edge</span>
+      </div>
+      <a href="#solusi" class="mobile-nav-link py-2 hover:text-[#2563eb]">Solusi Permasalahan</a>
+      <a href="#fitur" class="mobile-nav-link py-2 hover:text-[#2563eb]">Fitur Utama</a>
+      <a href="#kalkulator-saldo" class="mobile-nav-link py-2 text-[#0284c7] font-semibold">Simulasi Top-Up Saldo (Rp 250/GB)</a>
+      <a href="#inovasi-mendatang" class="mobile-nav-link py-2 hover:text-[#2563eb]">Inovasi Mendatang (Embed & Video)</a>
+      <a href="#arsitektur" class="mobile-nav-link py-2 hover:text-[#2563eb]">Arsitektur & Spesifikasi</a>
+      <a href="#roadmap" class="mobile-nav-link py-2 hover:text-[#2563eb]">Roadmap & KPI</a>
+      <a href="#faq" class="mobile-nav-link py-2 hover:text-[#2563eb]">Pertanyaan Umum (FAQ)</a>
+      <div class="pt-3 border-t border-[#0a0e1a]/15">
+        <a href="#kalkulator-saldo" class="action-btn-primary w-full justify-center">
+          Mulai Coba Sekarang
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  menuBtn?.addEventListener('click', () => {
+    const isHidden = mobileMenu?.classList.contains('hidden');
+    if (isHidden) {
+      mobileMenu?.classList.remove('hidden');
+      hamburgerIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    } else {
+      mobileMenu?.classList.add('hidden');
+      hamburgerIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      hamburgerIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+</script>

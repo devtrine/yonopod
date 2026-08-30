@@ -1,0 +1,246 @@
+---
+// UpcomingFeatures.astro - Editorial Showcase: No Cards, No Gray Card Borders, No Border Radius
+---
+
+<section id="inovasi-mendatang" class="py-24 md:py-32 bg-[#f8fafc] relative border-b border-slate-200">
+  <div class="max-w-[1586px] mx-auto px-4 sm:px-6 lg:px-9">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16 md:mb-20">
+      <span class="category preview">Inovasi Mendatang &bull; Q4 2026 - Q2 2027</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-4">
+        Lebih Dari Sekadar Cloud Storage. Ekosistem Media Modern.
+      </h2>
+      <p class="text-lg text-[#64748b] leading-relaxed">
+        Yonopod terus berinovasi. Tiga kemampuan baru sedang dipersiapkan untuk memberdayakan developer, konten kreator, dan pelaku bisnis dalam mendistribusikan file dan media ke seluruh dunia.
+      </p>
+    </div>
+
+    <!-- 3 Big Editorial Showcase Modules (NO CARDS, NO GRAY CARD BORDERS, NO RADIUS) -->
+    <div class="space-y-24">
+      
+      <!-- 1. Embed On Web -->
+      <div class="pt-8 border-t-2 border-[#0f172a]">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-6">
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 text-xs font-mono font-bold bg-[#06b6d4] text-[#042f2e] mb-4">
+              <span>FITUR 01</span> &bull; <span>BEBAS HAMBATAN CORB</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-[#0f172a] mb-4">
+              Embed On Web: Sematkan File ke Website Apapun
+            </h3>
+            <p class="text-base text-[#64748b] leading-relaxed mb-6">
+              Tidak perlu lagi pusing dengan error Cross-Origin Read Blocking (CORB) Google Drive. Dengan Yonopod Embed, Anda bisa menyematkan dokumen PDF, lembar kerja, foto galeri, atau video tutorial langsung ke dalam website, blog WordPress, LMS kampus, atau aplikasi web Anda hanya dengan satu baris kode.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 text-xs font-mono text-slate-800 mb-8">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-emerald-500"></span>
+                <span>Zero CORB Restrictions</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-emerald-500"></span>
+                <span>Zero Bandwidth Fee</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-emerald-500"></span>
+                <span>Responsif di Seluruh Layar</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-emerald-500"></span>
+                <span>Kustomisasi Toolbar Penuh</span>
+              </div>
+            </div>
+
+            <a href="#roadmap" class="action-link">
+              <span class="move-text">Lihat Jadwal Rilis (Fase 3)</span>
+              <span class="move-arrow"></span>
+            </a>
+          </div>
+
+          <!-- Code Snippet: Sharp Flat Block (No card, No radius) -->
+          <div class="lg:col-span-6">
+            <div class="bg-[#0a0e1a] p-6 font-mono text-xs text-slate-300">
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/10 text-slate-400">
+                <div class="flex items-center gap-2 font-bold text-white">
+                  <span>embed-snippet.html</span>
+                </div>
+              </div>
+              <pre class="overflow-x-auto text-[12px] leading-relaxed py-2"><span class="text-slate-500">&lt;!-- Sematkan dokumen ke web app tanpa error CORS/CORB --&gt;</span>
+<span class="text-[#2563eb]">&lt;iframe</span>
+  <span class="text-[#06b6d4]">src</span>=<span class="text-amber-300">"https://embed.yonopod.id/v1/img/banner-perusahaan"</span>
+  <span class="text-[#06b6d4]">width</span>=<span class="text-amber-300">"100%"</span>
+  <span class="text-[#06b6d4]">height</span>=<span class="text-amber-300">"600px"</span>
+  <span class="text-[#06b6d4]">frameborder</span>=<span class="text-amber-300">"0"</span>
+  <span class="text-[#06b6d4]">allow</span>=<span class="text-amber-300">"fullscreen; download"</span>
+<span class="text-[#2563eb]">&gt;&lt;/iframe&gt;</span></pre>
+              <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+                <span class="text-emerald-400">✓ Status: HTTP 200 OK &bull; Cross-Origin Allowed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Video Streaming Direct-From-Cloud -->
+      <div class="pt-8 border-t-2 border-[#0f172a]">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <!-- Video Player Mockup: Sharp Flat Block (No card, No radius) -->
+          <div class="lg:col-span-6 order-2 lg:order-1">
+            <div class="bg-[#0a0e1a] overflow-hidden">
+              <div class="relative aspect-video bg-slate-900 flex items-center justify-center p-6">
+                <!-- Play Button Ripple -->
+                <div class="w-16 h-16 bg-[#06b6d4] flex items-center justify-center text-[#0a0e1a] cursor-pointer hover:bg-white transition-colors">
+                  <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+                <!-- Stream Badges -->
+                <div class="absolute top-4 left-4 flex items-center gap-2 px-2.5 py-1 bg-[#0a0e1a] text-[11px] font-mono text-white">
+                  <span class="w-2 h-2 bg-red-500 animate-pulse"></span>
+                  <span>HLS Streaming &bull; 1080p HD</span>
+                </div>
+                <div class="absolute top-4 right-4 px-2.5 py-1 bg-[#0a0e1a] text-[11px] font-mono text-[#06b6d4]">
+                  Buffer: 0.1s (Instant)
+                </div>
+              </div>
+
+              <!-- Player Controls Bar -->
+              <div class="p-4 bg-[#0a0e1a] border-t border-white/10">
+                <div class="w-full h-1.5 bg-slate-800 mb-3 relative overflow-hidden">
+                  <div class="h-full bg-[#06b6d4] w-[42%]"></div>
+                </div>
+                <div class="flex items-center justify-between text-xs text-slate-300 font-mono">
+                  <span>04:12 / 10:00</span>
+                  <div class="flex items-center gap-3">
+                    <span class="text-[#06b6d4]">Bitrate Adaptif (Auto)</span>
+                    <span class="px-1.5 py-0.5 bg-white/10 text-white text-[10px]">1080p</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Copy -->
+          <div class="lg:col-span-6 order-1 lg:order-2">
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 text-xs font-mono font-bold bg-[#2563eb] text-white mb-4">
+              <span>FITUR 02</span> &bull; <span>ADAPTIVE BITRATE STREAMING</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-[#0f172a] mb-4">
+              Video Streaming: Tonton Langsung Tanpa Unduh Utuh
+            </h3>
+            <p class="text-base text-[#64748b] leading-relaxed mb-6">
+              Putar video dokumentasi, rekaman zoom, atau aset video proyek langsung dari dashboard web Anda. Didukung pemutar media internal berteknologi chunking video yang menyesuaikan resolusi secara otomatis sesuai kualitas koneksi internet.
+            </p>
+
+            <div class="space-y-2 text-sm text-[#0f172a] mb-8 font-medium">
+              <div class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 bg-[#2563eb]"></span>
+                <span>Protokol HLS & DASH untuk pemutaran secepat kilat tanpa jeda buffering.</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 bg-[#2563eb]"></span>
+                <span>Hemat kuota internet pengguna karena data di-stream secara bertahap.</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 bg-[#2563eb]"></span>
+                <span>Mendukung preview subtitle (.vtt/.srt) dan penanda waktu bab (chapters).</span>
+              </div>
+            </div>
+
+            <a href="#roadmap" class="action-link">
+              <span class="move-text">Eksplorasi Roadmap Q1 2027</span>
+              <span class="move-arrow"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. CDN Global Supported with Cloudflare -->
+      <div class="pt-8 border-t-2 border-[#0f172a]">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-6">
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 text-xs font-mono font-bold bg-amber-500 text-[#0a0e1a] mb-4">
+              <span>FITUR 03</span> &bull; <span>GLOBAL EDGE ACCELERATOR</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-[#0f172a] mb-4">
+              CDN Supported with Cloudflare: Unduhan Kencang di Seluruh Dunia
+            </h3>
+            <p class="text-base text-[#64748b] leading-relaxed mb-6">
+              Didukung oleh Cloudflare Pro, aset dan file Anda di-cache di ratusan kota edge di seluruh dunia. Pengguna di Jakarta, Surabaya, Tokyo, hingga London dapat mengunduh dan melihat dokumen Anda dengan latensi sangat rendah.
+            </p>
+
+            <div class="grid grid-cols-3 gap-4 mb-8 font-mono">
+              <div class="p-4 bg-slate-100 text-center">
+                <div class="text-2xl font-black text-[#06b6d4]">&lt; 100ms</div>
+                <div class="text-[11px] text-slate-600 mt-1">Kecepatan Resolve</div>
+              </div>
+              <div class="p-4 bg-slate-100 text-center">
+                <div class="text-2xl font-black text-[#2563eb]">300+</div>
+                <div class="text-[11px] text-slate-600 mt-1">Edge POPs</div>
+              </div>
+              <div class="p-4 bg-slate-100 text-center">
+                <div class="text-2xl font-black text-emerald-600">DDoS & WAF</div>
+                <div class="text-[11px] text-slate-600 mt-1">Proteksi Berlapis</div>
+              </div>
+            </div>
+
+            <a href="#arsitektur" class="action-link">
+              <span class="move-text">Lihat Arsitektur Cloudflare</span>
+              <span class="move-arrow"></span>
+            </a>
+          </div>
+
+          <!-- Architecture Visual Card: Sharp Flat Block (No card, No radius) -->
+          <div class="lg:col-span-6">
+            <div class="bg-[#0a0e1a] p-6 text-white">
+              <div class="flex items-center justify-between pb-4 mb-4 border-b border-white/10 text-xs font-mono">
+                <span class="text-slate-400 uppercase tracking-wider">Jalur Akses Data Terdistribusi</span>
+                <span class="text-[#06b6d4] font-bold">CLOUDFLARE EDGE</span>
+              </div>
+
+              <!-- Edge Route Diagram -->
+              <div class="space-y-3 font-mono text-xs">
+                <div class="p-3 bg-white/5 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="w-2.5 h-2.5 bg-[#06b6d4]"></span>
+                    <span>Pengguna (Browser / Mobile / Web App)</span>
+                  </div>
+                  <span class="text-slate-400">Anycast DNS</span>
+                </div>
+
+                <div class="flex justify-center text-[#06b6d4]">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+
+                <div class="p-3 bg-cyan-950/60 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="w-2.5 h-2.5 bg-emerald-400"></span>
+                    <span class="text-[#06b6d4] font-bold">Cloudflare Edge Cache (Hit: 94.2%)</span>
+                  </div>
+                  <span class="text-emerald-400 font-mono text-[11px] font-bold">&lt; 40ms</span>
+                </div>
+
+                <div class="flex justify-center text-[#2563eb]">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+
+                <div class="p-3 bg-white/5 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="w-2.5 h-2.5 bg-[#2563eb]"></span>
+                    <span>Worker Server + Huby Object Storage</span>
+                  </div>
+                  <span class="text-slate-400">Penyimpanan Utama</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

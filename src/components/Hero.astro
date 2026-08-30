@@ -1,0 +1,229 @@
+---
+// Hero.astro - Swiss Minimalist Flat Layout: No Cards, No Gray Card Borders, No Border Radius
+---
+
+<section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#f8fafc]">
+  <!-- Subtle Background Grid Accent -->
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 pointer-events-none"></div>
+
+  <div class="max-w-[1586px] mx-auto px-4 sm:px-6 lg:px-9 relative z-10">
+    <!-- Top Eyebrow Badges -->
+    <div class="flex flex-wrap items-center gap-2.5 mb-6">
+      <span class="category active">Cloud Storage Berbasis Web</span>
+    </div>
+
+    <!-- Main Hero Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <!-- Left Column: Copy & Actions -->
+      <div class="lg:col-span-7">
+        <h1 class="text-4xl sm:text-5xl lg:text-[62px] font-extrabold text-[#0f172a] leading-[1.08] tracking-tight mb-6">
+          Simpan File Tanpa Batas Paket.  
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2563eb] via-[#0284c7] to-[#06b6d4] block mt-1">
+            Bayar Hanya Rp 250 / GB.
+          </span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-[#64748b] leading-relaxed mb-8 max-w-2xl font-normal">
+          Tinggalkan paket langganan kaku yang memaksa Anda membayar kapasitas kosong. 
+          Yonopod menghadirkan cloud storage web fleksibel untuk pelajar, mahasiswa, dan UMKM 
+          dengan sistem <strong>top-up saldo</strong> hemat, bebas hambatan <strong>CORB</strong>.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap items-center gap-6 mb-12">
+          <a href="#kalkulator-saldo" class="action-btn-primary group">
+            <span>Simulasi Top-Up Saldo</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <button type="button" id="open-preaccess-btn" class="action-link cursor-pointer">
+            <a class="move-text" href="https://forms.gle/VD1d3Dr4CkhKu9y69" target="_blank">Minta Pre-Akses</a>
+            <a class="move-arrow" href="https://forms.gle/VD1d3Dr4CkhKu9y69" target="_blank"></a>
+          </button>
+        </div>
+
+        <!-- Metric Numbers: Pure Typography, No Cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-slate-300">
+          <div>
+            <div class="text-3xl font-extrabold text-[#0f172a] font-mono">Rp 250</div>
+            <div class="text-xs text-[#64748b] mt-1 font-medium">Per GB / bulan riil</div>
+          </div>
+          <div>
+            <div class="text-3xl font-extrabold text-[#06b6d4] font-mono">0 CORB</div>
+            <div class="text-xs text-[#64748b] mt-1 font-medium">Bebas integrasi web</div>
+          </div>
+          <div>
+            <div class="text-3xl font-extrabold text-[#2563eb] font-mono">R2</div>
+            <div class="text-xs text-[#64748b] mt-1 font-medium">File Transfer</div>
+          </div>
+          <div>
+            <div class="text-3xl font-extrabold text-[#0f172a] font-mono">99.9%</div>
+            <div class="text-xs text-[#64748b] mt-1 font-medium">Target uptime server</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Flat Architectural Web Drive Console (NO CARD, NO GRAY BORDER, NO RADIUS) -->
+      <div class="lg:col-span-5 pt-2">
+        <div class="bg-transparent">
+          <!-- Console Top Bar -->
+          <div class="flex items-center justify-between pb-3 mb-4 border-b-2 border-[#0f172a]">
+            <div class="font-mono text-xs text-emerald-700 bg-emerald-100 px-2 py-0.5 font-bold">
+              SALDO: RP 50.000
+            </div>
+          </div>
+
+          <!-- Capacity Technical Meter (Sharp geometric line) -->
+          <div class="mb-6 bg-slate-200/70 p-4">
+            <div class="flex items-center justify-between text-xs font-mono mb-2">
+              <span class="font-bold text-slate-800 uppercase tracking-wider">Storage Terpakai</span>
+              <span class="font-bold text-[#2563eb]">18.4 GB / Rp 4.600 bln</span>
+            </div>
+            <!-- Sharp Progress Bar -->
+            <div class="w-full h-2 bg-slate-300 overflow-hidden mb-2">
+              <div class="h-full bg-[#2563eb] w-[28%]"></div>
+            </div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-slate-600">
+              <span>Status Saldo: <strong>Aktif &bull; Cukup s/d 10 bulan</strong></span>
+              <span class="text-emerald-700 font-semibold">Zero Kuota Hangus</span>
+            </div>
+          </div>
+
+          <!-- Tag Filters: Flat Rectangular Chips -->
+          <div class="flex items-center gap-1 overflow-x-auto pb-2 mb-4 text-xs font-mono">
+            <span class="px-2.5 py-1 bg-[#0f172a] text-white font-semibold text-[11px]">SEMUA</span>
+            <span class="px-2.5 py-1 bg-blue-100 text-blue-800 font-semibold text-[11px]">#SKRIPSI</span>
+            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 font-semibold text-[11px]">#INVOICE</span>
+            <span class="px-2.5 py-1 bg-amber-100 text-amber-800 font-semibold text-[11px]">#PENTING</span>
+          </div>
+
+          <!-- File Explorer Rows: Clean Technical Table, No Cards -->
+          <div class="space-y-0 text-xs font-sans divide-y divide-slate-200">
+            <!-- Row 1 -->
+            <div class="py-3 flex items-center justify-between hover:bg-slate-100/60 px-2 transition-colors">
+              <div class="flex items-center gap-3 min-w-0">
+                <span class="w-6 h-6 bg-blue-600 text-white flex items-center justify-center text-[10px] font-mono font-bold flex-shrink-0">
+                  PDF
+                </span>
+                <div class="truncate">
+                  <div class="font-bold text-[#0f172a] truncate">Laporan-Keuangan-UMKM-2026.pdf</div>
+                  <div class="text-[11px] text-slate-500 font-mono">4.8 MB &bull; Tag: #Invoice &bull; Audit: 2 jam lalu</div>
+                </div>
+              </div>
+              <span class="font-mono text-[11px] text-slate-500 flex-shrink-0 ml-3">Verified</span>
+            </div>
+
+            <!-- Row 2: Private Vault -->
+            <div class="py-3 flex items-center justify-between bg-red-50 hover:bg-red-100 px-2 transition-colors">
+              <div class="flex items-center gap-3 min-w-0">
+                <span class="w-6 h-6 bg-[#07b1bd] text-[#042f2e] flex items-center justify-center text-[10px] font-mono font-bold flex-shrink-0">
+                  PNG
+                </span>
+                <div class="truncate">
+                  <div class="font-bold text-[#0f172a] truncate">Banner-Perusahaan.png</div>
+                  <div class="text-[11px] text-slate-500 font-mono">1.8 MB &bull; Cached</div>
+                </div>
+              </div>
+              <span class="font-mono text-[11px] text-[#d46906] font-bold flex-shrink-0 ml-3">Warm</span>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="py-3 flex items-center justify-between hover:bg-slate-100/60 px-2 transition-colors">
+              <div class="flex items-center gap-3 min-w-0">
+                <span class="w-6 h-6 bg-indigo-600 text-white flex items-center justify-center text-[10px] font-mono font-bold flex-shrink-0">
+                  MP4
+                </span>
+                <div class="truncate">
+                  <div class="font-bold text-[#0f172a] truncate">Video-Presentasi-Projek.mp4</div>
+                  <div class="text-[11px] text-slate-500 font-mono">240 MB &bull; Direct HLS Streaming Ready</div>
+                </div>
+              </div>
+              <span class="font-mono text-[11px] text-slate-500 flex-shrink-0 ml-3">Kemarin</span>
+            </div>
+          </div>
+
+          <!-- Console Footer Line -->
+          <div class="mt-4 pt-3 border-t border-slate-300 flex items-center justify-between text-[11px] font-mono text-slate-600">
+            <span class="flex items-center gap-1.5">
+              Audit Trail: 14 Log Tercatat Hari Ini
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pre-Access Modal (Sharp Architectural Geometry: No Cards, No Radius) -->
+  <div id="preaccess-modal" class="fixed inset-0 z-50 bg-[#0a0e1a]/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-[#0a0e1a] text-white p-8 sm:p-10 border-2 border-[#06b6d4] max-w-lg w-full relative shadow-2xl">
+      <!-- Close button -->
+      <button type="button" id="close-preaccess-btn" class="absolute top-4 right-4 text-slate-400 hover:text-white font-mono text-xl p-2 focus:outline-none">
+        ✕
+      </button>
+
+      <div class="text-xs font-mono font-bold text-[#06b6d4] uppercase tracking-widest mb-2">
+        ANTREAN PRIORITAS &bull; COMING SOON
+      </div>
+      <h3 class="text-2xl font-extrabold text-white mb-3">
+        Minta Pre-Akses Yonopod
+      </h3>
+      <p class="text-xs text-slate-300 leading-relaxed mb-6 font-sans">
+        Daftarkan email Anda untuk mendapatkan undangan uji coba tahap awal (Closed Beta) dan kuota bonus gratis saat platform resmi diluncurkan.
+      </p>
+
+      <form id="preaccess-form" class="space-y-4 font-mono text-xs">
+        <div>
+          <label class="block text-slate-400 uppercase tracking-wider mb-1.5">Nama Lengkap / Organisasi:</label>
+          <input 
+            type="text" 
+            id="preaccess-name" 
+            required 
+            placeholder="Contoh: Budi Santoso" 
+            class="w-full bg-white/5 text-white p-3 border border-white/20 focus:border-[#06b6d4] focus:outline-none placeholder-slate-500"
+          />
+        </div>
+        <div>
+          <label class="block text-slate-400 uppercase tracking-wider mb-1.5">Alamat Email:</label>
+          <input 
+            type="email" 
+            id="preaccess-email" 
+            required 
+            placeholder="nama@email.com" 
+            class="w-full bg-white/5 text-white p-3 border border-white/20 focus:border-[#06b6d4] focus:outline-none placeholder-slate-500"
+          />
+        </div>
+        <div>
+          <label class="block text-slate-400 uppercase tracking-wider mb-1.5">Kebutuhan Penggunaan:</label>
+          <select 
+            id="preaccess-role"
+            class="w-full bg-[#0f172a] text-white p-3 border border-white/20 focus:border-[#06b6d4] focus:outline-none"
+          >
+            <option value="student">Mahasiswa / Pelajar (Tugas & Skripsi)</option>
+            <option value="freelance">Freelancer / Kreator Konten</option>
+            <option value="umkm">Pelaku UMKM / Bisnis</option>
+            <option value="dev">Software Developer / Tech Enthusiast</option>
+          </select>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full py-3.5 bg-[#06b6d4] text-[#0a0e1a] font-bold uppercase tracking-wider hover:bg-[#22d3ee] transition-colors mt-2"
+        >
+          Kirim Permintaan Akses
+        </button>
+      </form>
+
+      <!-- Success Feedback Message -->
+      <div id="preaccess-success" class="hidden text-center py-6">
+        <div class="text-3xl mb-2 text-[#06b6d4]">✓</div>
+        <h4 class="text-lg font-bold text-white mb-2">Permintaan Anda Telah Tercatat!</h4>
+        <p class="text-xs text-slate-300 font-sans leading-relaxed">
+          Terima kasih atas antusiasme Anda. Tim Yonopod akan mengirimkan tautan aktivasi pre-akses ke email Anda menjelang peluncuran resmi.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,86 @@
+---
+// FAQ.astro - Editorial Accordion: No Cards, No Gray Card Borders, No Border Radius
+---
+
+<section id="faq" class="py-24 md:py-32 bg-[#f8fafc] relative border-b border-slate-200">
+  <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16">
+      <span class="category">Pusat Informasi</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-4">
+        Pertanyaan yang Sering Diajukan.
+      </h2>
+      <p class="text-lg text-[#64748b]">
+        Segala hal yang perlu Anda ketahui tentang sistem penyimpanan, keamanan data, dan skema saldo pay-as-you-use Yonopod.
+      </p>
+    </div>
+
+    <!-- Editorial Accordion (NO CARDS, NO GRAY CARD BORDERS, NO RADIUS) -->
+    <div class="divide-y-2 divide-[#0f172a] border-t-2 border-[#0f172a]">
+      <!-- Item 1 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-[#0f172a] list-none select-none">
+          <span>Bagaimana cara kerja sistem top-up saldo Rp 250 / GB?</span>
+          <span class="font-mono text-xl text-[#2563eb] group-open:rotate-45 transition-transform duration-200">
+            +
+          </span>
+        </summary>
+        <div class="mt-4 text-sm text-[#64748b] leading-relaxed max-w-3xl">
+          Sistem Yonopod bekerja persis seperti pulsa prabayar. Anda cukup mengisi saldo awal (misalnya Rp 25.000 via QRIS). Setiap hari atau bulan, sistem akan mendebit saldo sebesar <strong>Rp 250 per GB</strong> sesuai ukuran kapasitas file yang benar-benar tersimpan. Jika Anda hanya menyimpan 20 GB, biaya sebulan hanya Rp 5.000 — sehingga saldo Rp 25.000 Anda bisa bertahan hingga <strong>5 bulan penuh</strong> tanpa perlu bayar lagi!
+        </div>
+      </details>
+
+      <!-- Item 2 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-[#0f172a] list-none select-none">
+          <span>Mengapa bebas hambatan CORB sangat penting?</span>
+          <span class="font-mono text-xl text-[#2563eb] group-open:rotate-45 transition-transform duration-200">
+            +
+          </span>
+        </summary>
+        <div class="mt-4 text-sm text-[#64748b] leading-relaxed max-w-3xl">
+          Google Drive menerapkan <em>Cross-Origin Read Blocking</em> (CORB) yang memblokir pembacaan file dari domain lain. Hal ini membuat developer web, pemilik blog, atau instansi pendidikan kesulitan menyematkan file atau gambar ke website mereka tanpa otentikasi Google API yang rumit. Yonopod menyediakan tautan publik yang 100% bebas CORB dan <strong>bebas biaya bandwidth tambahan</strong>, sehingga aset file dapat langsung disematkan atau diintegrasikan ke platform apapun.
+        </div>
+      </details>
+
+      <!-- Item 4 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-[#0f172a] list-none select-none">
+          <span>Apakah sisa saldo saya akan hangus jika tidak dipakai habis?</span>
+          <span class="font-mono text-xl text-[#2563eb] group-open:rotate-45 transition-transform duration-200">
+            +
+          </span>
+        </summary>
+        <div class="mt-4 text-sm text-[#64748b] leading-relaxed max-w-3xl">
+          <strong>Sama sekali tidak hangus.</strong> Tidak seperti langganan bulanan di platform konvensional yang memotong kuota setiap 30 hari tanpa peduli Anda menggunakannya atau tidak, saldo Yonopod Anda akan tetap utuh dan hanya berkurang sesuai gigabyte yang Anda simpan setiap bulannya.
+        </div>
+      </details>
+
+      <!-- Item 5 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-[#0f172a] list-none select-none">
+          <span>Metode pembayaran apa saja yang didukung?</span>
+          <span class="font-mono text-xl text-[#2563eb] group-open:rotate-45 transition-transform duration-200">
+            +
+          </span>
+        </summary>
+        <div class="mt-4 text-sm text-[#64748b] leading-relaxed max-w-3xl">
+          Kami mendukung seluruh kanal pembayaran instan di Indonesia: <strong>QRIS</strong> (mendukung BCA Mobile, GoPay, OVO, DANA, ShopeePay, LinkAja), <strong>Virtual Account Bank</strong> (BCA, Mandiri, BNI, BRI, Permata), dan transfer antar bank tanpa memerlukan kepemilikan kartu kredit.
+        </div>
+      </details>
+
+      <!-- Item 6 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-[#0f172a] list-none select-none">
+          <span>Bagaimana cara kerja fitur Folder Size Analyzer?</span>
+          <span class="font-mono text-xl text-[#2563eb] group-open:rotate-45 transition-transform duration-200">
+            +
+          </span>
+        </summary>
+        <div class="mt-4 text-sm text-[#64748b] leading-relaxed max-w-3xl">
+          Folder Size Analyzer secara otomatis menghitung total beban data di setiap subfolder secara bertingkat dan menyajikannya dalam grafik visual yang mudah dipahami. Anda dapat langsung mengetahui direktori mana yang memakan kuota paling banyak, menemukan file duplikat yang terlupakan, dan membersihkannya untuk menjaga biaya penyimpanan tetap minimal.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

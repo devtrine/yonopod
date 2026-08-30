@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-accent-cyan: #06b6d4;
+  --color-accent-cyan-soft: #e0f2fe;
+  --color-canvas-light: #f8fafc;
+  --color-surface-white: #ffffff;
+  --color-command-dark: #0a0e1a;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-muted: #94a3b8;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Kinetic Action CTA Button (.action-link) */
+.action-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #0f172a;
+  cursor: pointer;
+  max-width: fit-content;
+  user-select: none;
+}
+
+.action-link .move-text {
+  display: inline-block;
+  margin-right: 12px;
+  height: 32px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.action-link .move-arrow {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #06b6d4; /* Electric Cyan */
+  flex-shrink: 0;
+  transition: background-color 0.25s ease-in-out, transform 0.25s ease;
+}
+
+/* Diagonal exit and loop entry on hover */
+.action-link .move-arrow::before,
+.action-link .move-arrow::after {
+  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.33 8H12.67M8.67 4L12.67 8L8.67 12' stroke='%23FFFFFF' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.action-link .move-arrow::before {
+  transform: translate(-130%, 100%);
+}
+
+.action-link:hover .move-arrow::before {
+  transform: translate(0, 0);
+}
+
+.action-link:hover .move-arrow::after {
+  transform: translate(140%, -130%);
+}
+
+/* Action button variants */
+.action-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border-radius: 0px; /* No border radius on cards/containers */
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.action-btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.action-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  background-color: transparent;
+  color: #0f172a;
+  border-radius: 0px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.action-btn-secondary:hover {
+  color: #06b6d4;
+}
+
+/* Category Eyebrow Badges (.category) */
+.category {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0 10px;
+  height: 26px;
+  line-height: 26px;
+  border-radius: 0px; /* Sharp architectural aesthetic */
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: #2563eb; /* Royal Blue default */
+}
+
+.category.active {
+  background-color: #06b6d4; /* Electric Cyan active */
+  color: #042f2e;
+}
+
+.category.preview {
+  background-color: #f97316; /* Coral for upcoming features */
+  color: #ffffff;
+}
+
+/* Telemetry pulse dot */
+@keyframes cyan-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(6, 182, 212, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+}
+
+.telemetry-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #06b6d4;
+  animation: cyan-pulse 2s infinite;
+  display: inline-block;
+}
+
+/* Underline sweep transition */
+.storage-link span {
+  background-image: linear-gradient(transparent calc(100% - 2px), #06b6d4 2px);
+  background-size: 0 94%;
+  background-repeat: no-repeat;
+  transition: background-size 0.25s ease-in-out;
+}
+.storage-link:hover span {
+  background-size: 100% 94%;
+}
+
+/* Flat, Non-Card Swiss Structural Layout: NO CARD, NO GRAY BORDER, NO BORDER RADIUS */
+.flat-panel {
+  background-color: transparent;
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
+}
+
+.storage-cockpit {
+  background-color: #0a0e1a;
+  border-radius: 0px;
+  color: #ffffff;
+  border: none;
+  box-shadow: none;
+}
+
+/* Custom Range Slider styling for Prepaid Calculator */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #cbd5e1;
+  border-radius: 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 0px; /* Sharp thumb */
+  background: #06b6d4;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #2563eb;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 0px;
+  background: #06b6d4;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: #2563eb;
+}

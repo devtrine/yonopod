@@ -1,0 +1,294 @@
+---
+// CreditCalculator.astro - Architectural Flat Simulator: No Cards, No Gray Card Borders, No Border Radius
+---
+
+<section id="kalkulator-saldo" class="py-24 md:py-32 bg-[#f8fafc] relative border-b border-slate-200">
+  <div class="max-w-[1586px] mx-auto px-4 sm:px-6 lg:px-9">
+    <!-- Section Eyebrow & Title -->
+    <div class="max-w-3xl mb-14 md:mb-16">
+      <span class="category active">Simulasi Top-Up Saldo</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-4">
+        Hitung Berapa Bulan Saldo Anda Bertahan.
+      </h2>
+      <p class="text-lg text-[#64748b] leading-relaxed">
+        Sistem Yonopod bekerja seperti pulsa: cukup <strong>Top-Up Saldo</strong> mulai dari Rp 10.000, 
+        dan sistem hanya mendebit <strong>Rp 250 per GB per bulan</strong> sesuai kapasitas riil yang Anda simpan. 
+        Tanpa biaya langganan berulang, tanpa kuota terbuang sia-sia!
+      </p>
+    </div>
+
+    <!-- Architectural Split Simulator (NO CARDS, NO GRAY CARD BORDERS, NO RADIUS) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch">
+      <!-- Left Column: Interactive Controls (Flat Architecture) -->
+      <div class="lg:col-span-7 bg-white p-8 sm:p-10 border-b lg:border-b-0 lg:border-r-2 border-[#0f172a]">
+        <!-- Slider 1: Top-Up Amount -->
+        <div class="mb-10">
+          <div class="flex items-center justify-between mb-4">
+            <label for="topup-range" class="text-sm font-mono font-bold text-[#0f172a] uppercase tracking-wider flex items-center gap-2">
+              <span class="w-5 h-5 bg-[#2563eb] text-white flex items-center justify-center text-xs">1</span>
+              Nominal Top-Up Saldo:
+            </label>
+            <span id="topup-display" class="font-mono text-3xl font-black text-[#2563eb]">
+              Rp 50.000
+            </span>
+          </div>
+
+          <input 
+            type="range" 
+            id="topup-range" 
+            min="10000" 
+            max="200000" 
+            step="5000" 
+            value="50000" 
+            class="w-full h-2 bg-slate-300 appearance-none cursor-pointer"
+          />
+
+          <!-- Quick Top-Up Presets: Sharp Rectangular Buttons -->
+          <div class="flex flex-wrap items-center gap-2 mt-5 font-mono text-xs">
+            <span class="text-slate-500 font-bold mr-1">PRESET:</span>
+            <button type="button" class="preset-topup-btn px-3 py-1.5 font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors" data-val="15000">Rp 15.000</button>
+            <button type="button" class="preset-topup-btn px-3 py-1.5 font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors" data-val="25000">Rp 25.000</button>
+            <button type="button" class="preset-topup-btn px-3 py-1.5 font-bold bg-[#2563eb] text-white transition-colors" data-val="50000">Rp 50.000 (Populer)</button>
+            <button type="button" class="preset-topup-btn px-3 py-1.5 font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors" data-val="100000">Rp 100.000</button>
+          </div>
+        </div>
+
+        <!-- Slider 2: Storage Size Used -->
+        <div class="mb-10 pt-8 border-t border-slate-200">
+          <div class="flex items-center justify-between mb-4">
+            <label for="storage-range" class="text-sm font-mono font-bold text-[#0f172a] uppercase tracking-wider flex items-center gap-2">
+              <span class="w-5 h-5 bg-[#06b6d4] text-[#042f2e] flex items-center justify-center text-xs">2</span>
+              Kapasitas File Riil:
+            </label>
+            <span id="storage-display" class="font-mono text-3xl font-black text-[#06b6d4]">
+              40 GB
+            </span>
+          </div>
+
+          <input 
+            type="range" 
+            id="storage-range" 
+            min="5" 
+            max="300" 
+            step="5" 
+            value="40" 
+            class="w-full h-2 bg-slate-300 appearance-none cursor-pointer"
+          />
+
+          <!-- Quick Storage Presets: Sharp Rectangular Buttons -->
+          <div class="flex flex-wrap items-center gap-2 mt-5 font-mono text-xs">
+            <span class="text-slate-500 font-bold mr-1">TIPE:</span>
+            <button type="button" class="preset-storage-btn px-3 py-1.5 font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors" data-val="20">Pelajar (20 GB)</button>
+            <button type="button" class="preset-storage-btn px-3 py-1.5 font-bold bg-[#06b6d4] text-[#042f2e] transition-colors" data-val="40">Mahasiswa (40 GB)</button>
+            <button type="button" class="preset-storage-btn px-3 py-1.5 font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors" data-val="100">Freelancer (100 GB)</button>
+            <button type="button" class="preset-storage-btn px-3 py-1.5 font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors" data-val="200">UMKM Bisnis (200 GB)</button>
+          </div>
+        </div>
+
+        <!-- Payment Method Highlights -->
+        <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono text-slate-600">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-emerald-500"></span>
+            <span>PEMBAYARAN INSTAN: <strong>QRIS, GoPay, OVO, DANA, Virtual Account</strong></span>
+          </div>
+          <span class="text-slate-500 font-bold">Tanpa Kartu Kredit</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Output Slab (Pitch Midnight, Sharp Geometry, No Cards) -->
+      <div class="lg:col-span-5 bg-[#0a0e1a] text-white p-8 sm:p-10 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
+            <span class="text-xs font-mono text-[#06b6d4] font-bold uppercase tracking-widest">HASIL SIMULASI SALDO</span>
+            <span class="text-xs font-mono bg-white/10 px-2 py-0.5 text-slate-300 font-semibold">TARIF RP 250 / GB</span>
+          </div>
+
+          <!-- Main Metric: Months of Active Storage -->
+          <div class="mb-8">
+            <div class="text-xs font-mono uppercase text-slate-400 mb-1 tracking-wider">Masa Aktif Saldo Anda:</div>
+            <div class="flex items-baseline gap-3">
+              <span id="months-display" class="text-6xl sm:text-7xl font-black font-mono text-white tracking-tight">
+                5.0
+              </span>
+              <span class="text-2xl font-bold text-[#06b6d4] font-mono uppercase">BULAN</span>
+            </div>
+            <div class="text-xs text-slate-400 mt-2 font-mono">
+              Biaya riil pemakaian: <strong id="monthly-rate-display" class="text-white text-sm">Rp 10.000</strong> per bulan
+            </div>
+          </div>
+
+          <!-- Comparative Benchmark Box: Flat Structural Grid -->
+          <div class="bg-white/5 p-5 mb-8 space-y-3 font-mono text-xs border-l-2 border-[#06b6d4]">
+            <div class="text-slate-400 uppercase tracking-wider text-[11px] mb-2 font-bold">Bandingkan Biaya Selama Periode Tersebut:</div>
+            
+            <!-- Yonopod -->
+            <div class="flex items-center justify-between">
+              <span class="text-white font-bold flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-[#06b6d4]"></span>
+                YONOPOD (Top-Up Saldo)
+              </span>
+              <span id="yonopod-total-display" class="font-bold text-[#06b6d4] text-sm">Rp 50.000</span>
+            </div>
+
+            <!-- Google Drive Package -->
+            <div class="flex items-center justify-between pt-2 border-t border-white/10">
+              <span class="text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-slate-500"></span>
+                Google Drive (Paket Terdekat)
+              </span>
+              <span id="gdrive-total-display" class="font-bold text-red-400 text-sm">Rp 162.500</span>
+            </div>
+
+            <!-- Estimated Savings Badge -->
+            <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+              <span class="text-emerald-400 uppercase text-[11px] font-bold">Estimasi Penghematan:</span>
+              <span id="savings-badge" class="px-2 py-0.5 bg-emerald-500 text-[#0a0e1a] font-bold text-xs">
+                Hemat Rp 112.500 (69%)
+              </span>
+            </div>
+          </div>
+
+          <!-- Feature Guarantees -->
+          <div class="space-y-2 text-xs text-slate-300 font-sans mb-8">
+            <div class="flex items-center gap-2">
+              <span class="text-[#06b6d4] font-mono font-bold">&bull;</span>
+              <span>Saldo tidak akan hangus meski lewat 30 hari kalender.</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#06b6d4] font-mono font-bold">&bull;</span>
+              <span>100% bebas biaya bandwidth dan bebas blokir CORB.</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#06b6d4] font-mono font-bold">&bull;</span>
+              <span>Notifikasi saldo otomatis sebelum batas kapasitas tercapai.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA inside Simulator -->
+        <a href="#fitur" class="action-btn-primary w-full justify-center !bg-[#06b6d4] !text-[#0a0e1a] hover:!bg-[#22d3ee] font-mono uppercase tracking-wider font-bold py-3.5">
+          Mulai Isi Saldo Pertama
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Dynamic Calculator Logic for Top-Up Saldo Simulator
+  function initCreditCalculator() {
+    const topupRange = document.getElementById('topup-range') as HTMLInputElement;
+    const storageRange = document.getElementById('storage-range') as HTMLInputElement;
+    const topupDisplay = document.getElementById('topup-display');
+    const storageDisplay = document.getElementById('storage-display');
+    const monthsDisplay = document.getElementById('months-display');
+    const monthlyRateDisplay = document.getElementById('monthly-rate-display');
+    const yonopodTotalDisplay = document.getElementById('yonopod-total-display');
+    const gdriveTotalDisplay = document.getElementById('gdrive-total-display');
+    const savingsBadge = document.getElementById('savings-badge');
+
+    const topupPresetBtns = document.querySelectorAll('.preset-topup-btn');
+    const storagePresetBtns = document.querySelectorAll('.preset-storage-btn');
+
+    const PRICE_PER_GB = 250; // Rp 250 per GB per month
+
+    function formatRupiah(num: number): string {
+      return 'Rp ' + Math.round(num).toLocaleString('id-ID');
+    }
+
+    function calculate() {
+      const topup = parseFloat(topupRange.value);
+      const storage = parseFloat(storageRange.value);
+
+      if (topupDisplay) topupDisplay.textContent = formatRupiah(topup);
+      if (storageDisplay) storageDisplay.textContent = `${storage} GB`;
+
+      // Monthly cost on Yonopod
+      const monthlyCost = storage * PRICE_PER_GB;
+      if (monthlyRateDisplay) monthlyRateDisplay.textContent = `${formatRupiah(monthlyCost)} / bln`;
+
+      // Months the balance will last
+      const months = topup / monthlyCost;
+      if (monthsDisplay) {
+        monthsDisplay.textContent = months >= 10 ? months.toFixed(0) : months.toFixed(1);
+      }
+
+      if (yonopodTotalDisplay) {
+        yonopodTotalDisplay.textContent = formatRupiah(topup);
+      }
+
+      // Google drive package benchmark
+      let gdriveMonthly = 32500;
+      if (storage <= 15) {
+        gdriveMonthly = 32500;
+      } else if (storage <= 100) {
+        gdriveMonthly = 32500;
+      } else if (storage <= 200) {
+        gdriveMonthly = 43000;
+      } else {
+        gdriveMonthly = 135000;
+      }
+
+      const gdriveTotal = months * gdriveMonthly;
+      if (gdriveTotalDisplay) {
+        gdriveTotalDisplay.textContent = formatRupiah(gdriveTotal);
+      }
+
+      // Savings
+      const savings = gdriveTotal - topup;
+      const savingsPercent = Math.max(0, Math.round((savings / gdriveTotal) * 100));
+
+      if (savingsBadge) {
+        if (savings > 0) {
+          savingsBadge.textContent = `Hemat ${formatRupiah(savings)} (${savingsPercent}%)`;
+          savingsBadge.className = 'px-2 py-0.5 bg-emerald-500 text-[#0a0e1a] font-bold text-xs';
+        } else {
+          savingsBadge.textContent = 'Fleksibel Tanpa Kuota Hangus';
+          savingsBadge.className = 'px-2 py-0.5 bg-[#2563eb] text-white font-bold text-xs';
+        }
+      }
+    }
+
+    topupRange?.addEventListener('input', calculate);
+    storageRange?.addEventListener('input', calculate);
+
+    topupPresetBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const val = (e.currentTarget as HTMLElement).getAttribute('data-val');
+        if (val && topupRange) {
+          topupRange.value = val;
+          topupPresetBtns.forEach(b => {
+            b.classList.remove('bg-[#2563eb]', 'text-white');
+            b.classList.add('bg-slate-100', 'text-slate-700');
+          });
+          (e.currentTarget as HTMLElement).classList.remove('bg-slate-100', 'text-slate-700');
+          (e.currentTarget as HTMLElement).classList.add('bg-[#2563eb]', 'text-white');
+          calculate();
+        }
+      });
+    });
+
+    storagePresetBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const val = (e.currentTarget as HTMLElement).getAttribute('data-val');
+        if (val && storageRange) {
+          storageRange.value = val;
+          storagePresetBtns.forEach(b => {
+            b.classList.remove('bg-[#06b6d4]', 'text-[#042f2e]');
+            b.classList.add('bg-slate-100', 'text-slate-700');
+          });
+          (e.currentTarget as HTMLElement).classList.remove('bg-slate-100', 'text-slate-700');
+          (e.currentTarget as HTMLElement).classList.add('bg-[#06b6d4]', 'text-[#042f2e]');
+          calculate();
+        }
+      });
+    });
+
+    // Initial run
+    calculate();
+  }
+
+  // Run on mount
+  initCreditCalculator();
+  document.addEventListener('astro:page-load', initCreditCalculator);
+</script>

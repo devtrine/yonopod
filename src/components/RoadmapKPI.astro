@@ -1,0 +1,216 @@
+---
+// RoadmapKPI.astro - Strategic Roadmap & KPI Metrics: No Cards, No Gray Card Borders, No Border Radius
+---
+
+<section id="roadmap" class="py-24 md:py-32 bg-white relative border-b border-slate-200">
+  <div class="max-w-[1586px] mx-auto px-4 sm:px-6 lg:px-9">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16 md:mb-20">
+      <span class="category">Rencana Strategis</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-4">
+        Roadmap Proyek & Standar Keandalan KPI.
+      </h2>
+      <p class="text-lg text-[#64748b] leading-relaxed">
+        Pengembangan platform cloud storage Yonopod dipandu oleh linimasa yang terstruktur, mulai dari peluncuran MVP hingga ekspansi ekosistem enterprise.
+      </p>
+    </div>
+
+    <!-- 4 Phases Timeline Grid (NO CARDS, NO GRAY CARD BORDERS, NO RADIUS) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+      <!-- Phase 1 -->
+      <div class="border-t-4 border-[#2563eb] pt-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2 text-xs font-mono font-bold">
+            <span class="text-[#2563eb]">FASE 01 &bull; MVP</span>
+            <span class="text-slate-500">Agus - Sep 2026</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-3">Core System & Soft Launch</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">
+            Fondasi platform web drive, pengujian komprehensif, dan peluncuran resmi sistem siap pakai.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-800 font-sans">
+            <li class="flex items-start gap-2">
+              <span class="text-[#2563eb] font-bold">&bull;</span>
+              <span>File & Folder Explorer responsif</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#2563eb] font-bold">&bull;</span>
+              <span>Integrasi awal Huby Object Storage</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#2563eb] font-bold">&bull;</span>
+              <span>Fitur Audit Log & Folder Analyzer</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#2563eb] font-bold">&bull;</span>
+              <span>Deployment Main & Worker Server</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-8 pt-3 border-t border-slate-200 text-xs font-mono text-emerald-700 font-bold">
+          STATUS: TAHAP PENGEMBANGAN
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="border-t-4 border-[#06b6d4] pt-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2 text-xs font-mono font-bold">
+            <span class="text-[#06b6d4]">FASE 02 &bull; MONETISASI</span>
+            <span class="text-slate-500">Okt - Des 2026</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-3">Stabilisasi & Target 5 TB</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">
+            Validasi pasar, aktivasi gateway saldo pulsa, dan pencapaian titik impas operasional.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-800 font-sans">
+            <li class="flex items-start gap-2">
+              <span class="text-[#06b6d4] font-bold">&bull;</span>
+              <span>Payment Gateway otomatis (QRIS/VA)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#06b6d4] font-bold">&bull;</span>
+              <span>Two-Factor Authentication (2FA)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#06b6d4] font-bold">&bull;</span>
+              <span>Akuisisi Mahasiswa & UMKM</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#06b6d4] font-bold">&bull;</span>
+              <span>Pencapaian penjualan kapasitas 5 TB</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-8 pt-3 border-t border-slate-200 text-xs font-mono text-slate-500 font-bold">
+          TARGET: Q4 2026
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="border-t-4 border-indigo-600 pt-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2 text-xs font-mono font-bold">
+            <span class="text-indigo-600">FASE 03 &bull; EKSPANSI</span>
+            <span class="text-slate-500">Jan - Jun 2027</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-3">Media & Video Streaming</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">
+            Penambahan nilai guna tinggi untuk retensi pengguna, kolaborasi berkas, dan pemutar media.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-800 font-sans">
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-600 font-bold">&bull;</span>
+              <span><strong>Embed On Web</strong> tanpa hambatan CORB</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-600 font-bold">&bull;</span>
+              <span><strong>Video Streaming</strong> adaptif langsung</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-600 font-bold">&bull;</span>
+              <span>Kemitraan institusi pendidikan & UMKM</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-slate-900 font-bold">&bull;</span>
+              <span>Public API untuk integrasi developer</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-8 pt-3 border-t border-slate-200 text-xs font-mono text-slate-500 font-bold">
+          TARGET: SEMESTER 1 2027
+        </div>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="border-t-4 border-[#0f172a] pt-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2 text-xs font-mono font-bold">
+            <span class="text-[#0f172a]">FASE 04 &bull; SCALE</span>
+            <span class="text-slate-500">Jul 2027+</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-3">Multi-Region & B2B</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">
+            Penskalaan infrastruktur cloud masif, multi-region redundancy, dan layanan enterprise terintegrasi.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-800 font-sans">
+            <li class="flex items-start gap-2">
+              <span class="text-slate-900 font-bold">&bull;</span>
+              <span>Multi-Region Worker Server Cluster</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-slate-900 font-bold">&bull;</span>
+              <span>Aggressive Edge Caching (Cloudflare)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-slate-900 font-bold">&bull;</span>
+              <span>Paket Tim dengan RBAC granular</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-8 pt-3 border-t border-slate-200 text-xs font-mono text-slate-500 font-bold">
+          TARGET: JANGKA PANJANG
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 KPI Metrics in Flat Technical Matrix (NO CARDS, NO GRAY CARD BORDERS, NO RADIUS) -->
+    <div class="pt-12 border-t-2 border-[#0f172a]">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <span class="text-xs font-mono font-bold text-[#06b6d4] uppercase tracking-widest">METRIK KINERJA PRODUKSI</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-[#0f172a] mt-1">
+            Standar Kualitas & Key Performance Indicator (KPI)
+          </h3>
+        </div>
+        <p class="text-xs font-mono text-slate-500 mt-2 md:mt-0">
+          Uji Beban & Keandalan Terverifikasi
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 font-mono">
+        <!-- KPI 1 -->
+        <div class="p-4 bg-slate-100 border-l-2 border-[#06b6d4]">
+          <div class="text-3xl font-black text-[#06b6d4] mb-1">&gt; 99%</div>
+          <div class="text-xs font-bold text-[#0f172a] uppercase">Upload Success</div>
+          <div class="text-[10px] text-slate-500 mt-1 font-sans">Rasio unggah tanpa gagal</div>
+        </div>
+
+        <!-- KPI 2 -->
+        <div class="p-4 bg-slate-100 border-l-2 border-[#2563eb]">
+          <div class="text-3xl font-black text-[#2563eb] mb-1">&lt; 500ms</div>
+          <div class="text-xs font-bold text-[#0f172a] uppercase">API Response</div>
+          <div class="text-[10px] text-slate-500 mt-1 font-sans">Waktu respons server</div>
+        </div>
+
+        <!-- KPI 3 -->
+        <div class="p-4 bg-slate-100 border-l-2 border-[#06b6d4]">
+          <div class="text-3xl font-black text-[#06b6d4] mb-1">&lt; 100ms</div>
+          <div class="text-xs font-bold text-[#0f172a] uppercase">Resolve File</div>
+          <div class="text-[10px] text-slate-500 mt-1 font-sans">Kecepatan file ber-cache</div>
+        </div>
+
+        <!-- KPI 4 -->
+        <div class="p-4 bg-slate-100 border-l-2 border-[#2563eb]">
+          <div class="text-3xl font-black text-[#2563eb] mb-1">&lt; 2s</div>
+          <div class="text-xs font-bold text-[#0f172a] uppercase">Pencarian Data</div>
+          <div class="text-[10px] text-slate-500 mt-1 font-sans">Hasil akurat instan</div>
+        </div>
+
+        <!-- KPI 5 -->
+        <div class="p-4 bg-slate-100 border-l-2 border-emerald-600">
+          <div class="text-3xl font-black text-emerald-600 mb-1">99.9%</div>
+          <div class="text-xs font-bold text-[#0f172a] uppercase">Server Uptime</div>
+          <div class="text-[10px] text-slate-500 mt-1 font-sans">Keandalan aktif bulanan</div>
+        </div>
+
+        <!-- KPI 6 -->
+        <div class="p-4 bg-slate-100 border-l-2 border-[#0f172a]">
+          <div class="text-3xl font-black text-[#0f172a] mb-1">&gt; 50%</div>
+          <div class="text-xs font-bold text-[#0f172a] uppercase">Reduksi Duplikat</div>
+          <div class="text-[10px] text-slate-500 mt-1 font-sans">Pembersihan ruang sampah</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

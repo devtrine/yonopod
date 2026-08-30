@@ -1,0 +1,119 @@
+---
+// ProblemSolution.astro - Editorial Comparison Layout: No Cards, No Gray Card Borders, No Border Radius
+---
+
+<section id="solusi" class="py-24 md:py-32 bg-white relative border-b border-slate-200">
+  <div class="max-w-[1586px] mx-auto px-4 sm:px-6 lg:px-9">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16 md:mb-20">
+      <span class="category">Solusi Berkelanjutan</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-4">
+        Masalah Nyata Cloud Storage Konvensional & Solusi Cerdas Yonopod.
+      </h2>
+      <p class="text-lg text-[#64748b] leading-relaxed">
+        Penyedia komersial saat ini mengunci Anda dalam paket langganan kaku dan hambatan teknis yang mahal. Yonopod mendobrak inefisiensi tersebut dengan pendekatan arsitektur terbuka.
+      </p>
+    </div>
+
+    <!-- Editorial Comparison Grid (NO CARDS, NO GRAY CARD BORDERS, NO RADIUS) -->
+    <div class="divide-y-2 divide-[#0f172a]">
+      
+      <!-- Comparison Row 1: CORB -->
+      <div class="py-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-1 text-xs font-mono font-bold text-slate-400">
+          01 / CORB
+        </div>
+        <div class="lg:col-span-5 pr-4">
+          <div class="text-xs font-mono text-red-600 font-bold uppercase tracking-wider mb-2">Masalah Konvensional</div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-2">Cross-Origin Read Blocking (Google Drive)</h3>
+          <p class="text-sm text-[#64748b] leading-relaxed">
+            Google Drive memblokir akses file lintas domain secara default. Mengintegrasikan dokumen atau gambar ke web app, blog, atau LMS kampus memerlukan API OAuth yang kompleks dan rawan kegagalan.
+          </p>
+        </div>
+        <div class="lg:col-span-6 pl-0 lg:pl-6 border-t lg:border-t-0 pt-4 lg:pt-0">
+          <div class="text-xs font-mono text-[#06b6d4] font-bold uppercase tracking-wider mb-2">Solusi Yonopod</div>
+          <h4 class="text-xl font-bold text-[#0f172a] mb-2">Akses Native Bebas CORB & Bebas Bandwidth</h4>
+          <p class="text-sm text-[#0f172a] leading-relaxed mb-3">
+            File di Yonopod dapat diakses, disematkan (embed), atau diunduh secara langsung dari aplikasi web manapun tanpa batasan CORS/CORB dan tanpa biaya bandwidth tersembunyi.
+          </p>
+          <div class="text-xs font-mono text-[#06b6d4] font-bold">
+            &bull; Direct Web Embedding Enabled &bull; Zero Bandwidth Fee
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Row 2: Fixed Pricing -->
+      <div class="py-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-1 text-xs font-mono font-bold text-slate-400">
+          02 / BIAYA
+        </div>
+        <div class="lg:col-span-5 pr-4">
+          <div class="text-xs font-mono text-red-600 font-bold uppercase tracking-wider mb-2">Masalah Konvensional</div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-2">Paket Langganan Kaku & Pemborosan Kuota</h3>
+          <p class="text-sm text-[#64748b] leading-relaxed">
+            Pengguna dengan kebutuhan 25 GB dipaksa membeli paket 100 GB seharga Rp 32.500/bulan atau 2 TB seharga Rp 135.000/bulan. Sebanyak 75% kapasitas yang Anda bayar terbuang sia-sia tanpa kompensasi.
+          </p>
+        </div>
+        <div class="lg:col-span-6 pl-0 lg:pl-6 border-t lg:border-t-0 pt-4 lg:pt-0">
+          <div class="text-xs font-mono text-[#2563eb] font-bold uppercase tracking-wider mb-2">Solusi Yonopod</div>
+          <h4 class="text-xl font-bold text-[#0f172a] mb-2">Tarif Fleksibel Rp 250 / GB Tanpa Kuota Hangus</h4>
+          <p class="text-sm text-[#0f172a] leading-relaxed mb-3">
+            Hanya bayar per byte yang tersimpan riil. Cukup isi saldo mulai Rp 10.000 via QRIS. Jika Anda menyimpan 20 GB, biaya sebulan hanya Rp 5.000 dan saldo Anda tidak akan hangus setelah 30 hari.
+          </p>
+          <div class="text-xs font-mono text-[#2563eb] font-bold">
+            &bull; Hemat hingga 80% biaya tahunan &bull; Sistem Top-Up Pulsa
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Row 3: Organization -->
+      <div class="py-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-1 text-xs font-mono font-bold text-slate-400">
+          03 / ORGANISASI
+        </div>
+        <div class="lg:col-span-5 pr-4">
+          <div class="text-xs font-mono text-red-600 font-bold uppercase tracking-wider mb-2">Masalah Konvensional</div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-2">Hirarki Folder Kuno & Duplikasi File</h3>
+          <p class="text-sm text-[#64748b] leading-relaxed">
+            Hanya mengandalkan struktur folder konvensional menyebabkan file tercecer, duplikasi file ganda yang tidak terkontrol, serta resiko file ditimpa tanpa riwayat versi yang jelas.
+          </p>
+        </div>
+        <div class="lg:col-span-6 pl-0 lg:pl-6 border-t lg:border-t-0 pt-4 lg:pt-0">
+          <div class="text-xs font-mono text-[#06b6d4] font-bold uppercase tracking-wider mb-2">Solusi Yonopod</div>
+          <h4 class="text-xl font-bold text-[#0f172a] mb-2">Tag & Label + Folder Size Analyzer Cerdas</h4>
+          <p class="text-sm text-[#0f172a] leading-relaxed mb-3">
+            Kelompokkan file multi-konteks (#Pekerjaan, #Pribadi, #Invoice) tanpa menduplikasi file. Folder Size Analyzer memetakan folder tergemuk dan mereduksi penumpukan file duplikat hingga >50%.
+          </p>
+          <div class="text-xs font-mono text-[#06b6d4] font-bold">
+            &bull; Reduksi duplikasi data &gt;50% &bull; Multi-Tagging Cepat
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Row 4: Monitoring -->
+      <div class="py-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-1 text-xs font-mono font-bold text-slate-400">
+          04 / INTEGRITAS
+        </div>
+        <div class="lg:col-span-5 pr-4">
+          <div class="text-xs font-mono text-red-600 font-bold uppercase tracking-wider mb-2">Masalah Konvensional</div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-2">Buta Aktivitas & Ketidakpastian Integritas</h3>
+          <p class="text-sm text-[#64748b] leading-relaxed">
+            Kapasitas sering penuh mendadak tanpa pemberitahuan detail. Pengguna tidak dapat melacak kapan sebuah file diubah, siapa yang mengunduh, atau mengapa ada file yang hilang.
+          </p>
+        </div>
+        <div class="lg:col-span-6 pl-0 lg:pl-6 border-t lg:border-t-0 pt-4 lg:pt-0">
+          <div class="text-xs font-mono text-[#2563eb] font-bold uppercase tracking-wider mb-2">Solusi Yonopod</div>
+          <h4 class="text-xl font-bold text-[#0f172a] mb-2">Audit Log Detail & Private Vault AES-256</h4>
+          <p class="text-sm text-[#0f172a] leading-relaxed mb-3">
+            Setiap aksi file (unggah, ganti nama, pemindahan, pengunduhan) terekam dalam Audit Log transparan. Dilengkapi ruang brankas Private Vault dengan enkripsi AES-256 dan proteksi PIN mandiri.
+          </p>
+          <div class="text-xs font-mono text-[#2563eb] font-bold">
+            &bull; Transparansi 100% dengan audit trail &bull; Proteksi PIN Terpisah
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
