@@ -231,3 +231,195 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]::-moz-range-thumb:hover {
   background: #2563eb;
 }
+
+/* ==========================================================================
+   INTERACTIVE ANIMATIONS & CURSOR FOLLOWER
+   ========================================================================== */
+
+/* Ambient Torch / Spotlight Background Glow */
+#ambient-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.07) 0%, rgba(37, 99, 235, 0.03) 40%, transparent 70%);
+  transform: translate3d(-50%, -50%, 0);
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  will-change: transform, opacity;
+}
+
+/* Custom Interactive Cursor Dot & Ring */
+#cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #06b6d4;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-50%, -50%, 0);
+  transition: opacity 0.2s ease, transform 0.05s linear, background-color 0.2s ease;
+  will-change: transform;
+}
+
+#cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(6, 182, 212, 0.6);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate3d(-50%, -50%, 0);
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.25s ease, 
+              background-color 0.25s ease, 
+              opacity 0.2s ease;
+  will-change: transform, width, height;
+}
+
+/* Cursor State: Hover on Interactive Elements */
+body.cursor-active #cursor-ring {
+  width: 52px;
+  height: 52px;
+  border-color: #06b6d4;
+  background-color: rgba(6, 182, 212, 0.1);
+}
+
+body.cursor-active #cursor-dot {
+  background-color: #2563eb;
+  transform: translate3d(-50%, -50%, 0) scale(1.4);
+}
+
+/* Hide cursor when pointer leaves window */
+body.cursor-hidden #cursor-dot,
+body.cursor-hidden #cursor-ring,
+body.cursor-hidden #ambient-glow {
+  opacity: 0 !important;
+}
+
+/* Disable Custom Cursor on Touch Screens */
+@media (pointer: coarse) or (hover: none) {
+  #cursor-dot,
+  #cursor-ring,
+  #ambient-glow {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   ANIMATED ON SCROLL (AOS) SYSTEM
+   ========================================================================== */
+
+[data-aos] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition-property: opacity, transform;
+  transition-duration: 0.65s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-aos="fade-up"].aos-animate,
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-aos="fade-in"] {
+  transform: none;
+}
+[data-aos="fade-in"].aos-animate {
+  opacity: 1;
+}
+
+/* Stagger Delays */
+[data-aos-delay="50"]  { transition-delay: 50ms; }
+[data-aos-delay="100"] { transition-delay: 100ms; }
+[data-aos-delay="150"] { transition-delay: 150ms; }
+[data-aos-delay="200"] { transition-delay: 200ms; }
+[data-aos-delay="250"] { transition-delay: 250ms; }
+[data-aos-delay="300"] { transition-delay: 300ms; }
+[data-aos-delay="350"] { transition-delay: 350ms; }
+[data-aos-delay="400"] { transition-delay: 400ms; }
+[data-aos-delay="500"] { transition-delay: 500ms; }
+
+/* ==========================================================================
+   INTERACTIVE HOVER: 3D TILT, BORDER GLOW & MAGNETIC
+   ========================================================================== */
+
+/* 3D Perspective Tilt Elements */
+.interactive-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s ease, 
+              border-color 0.25s ease;
+  will-change: transform;
+}
+
+.interactive-tilt:hover {
+  box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.14), 0 0 0 1px rgba(6, 182, 212, 0.3);
+}
+
+/* Magnetic Interactive Pull */
+.magnetic-item {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Dynamic Table & Comparison Row Hover */
+.interactive-row {
+  position: relative;
+  transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), padding-left 0.2s ease;
+}
+
+.interactive-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #06b6d4;
+  opacity: 0;
+  transform: scaleY(0.4);
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.interactive-row:hover::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.interactive-row:hover {
+  background-color: rgba(241, 245, 249, 0.85);
+  padding-left: 8px;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: PREFERS REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos],
+  .interactive-tilt,
+  .magnetic-item,
+  .interactive-row,
+  #cursor-dot,
+  #cursor-ring,
+  #ambient-glow {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

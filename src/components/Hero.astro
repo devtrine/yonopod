@@ -8,7 +8,7 @@
 
   <div class="max-w-[1586px] mx-auto px-4 sm:px-6 lg:px-9 relative z-10">
     <!-- Top Eyebrow Badges -->
-    <div class="flex flex-wrap items-center gap-2.5 mb-6">
+    <div class="flex flex-wrap items-center gap-2.5 mb-6" data-aos="fade-up">
       <span class="category active">Cloud Storage Berbasis Web</span>
     </div>
 
@@ -16,42 +16,46 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       <!-- Left Column: Copy & Actions -->
       <div class="lg:col-span-7">
-        <h1 class="text-4xl sm:text-5xl lg:text-[62px] font-extrabold text-[#0f172a] leading-[1.08] tracking-tight mb-6">
+        <h1 class="text-4xl sm:text-5xl lg:text-[62px] font-extrabold text-[#0f172a] leading-[1.08] tracking-tight mb-6" data-aos="fade-up" data-aos-delay="100">
           Simpan File Tanpa Batas Paket.  
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2563eb] via-[#0284c7] to-[#06b6d4] block mt-1">
             Bayar Hanya Rp 250 / GB.
           </span>
         </h1>
 
-        <p class="text-lg sm:text-xl text-[#64748b] leading-relaxed mb-8 max-w-2xl font-normal">
+        <p class="text-lg sm:text-xl text-[#64748b] leading-relaxed mb-8 max-w-2xl font-normal" data-aos="fade-up" data-aos-delay="150">
           Tinggalkan paket langganan kaku yang memaksa Anda membayar kapasitas kosong. 
           Yonopod menghadirkan cloud storage web fleksibel untuk pelajar, mahasiswa, dan UMKM 
           dengan sistem <strong>top-up saldo</strong> hemat, bebas hambatan <strong>CORB</strong>.
         </p>
 
         <!-- CTAs -->
-        <div class="flex flex-wrap items-center gap-6 mb-12">
-          <a href="#kalkulator-saldo" class="action-btn-primary group">
+        <div class="flex flex-wrap items-center gap-6 mb-12" data-aos="fade-up" data-aos-delay="200">
+          <a href="#kalkulator-saldo" class="action-btn-primary group" data-magnetic>
             <span>Simulasi Top-Up Saldo</span>
             <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </a>
 
-          <button type="button" id="open-preaccess-btn" class="action-link cursor-pointer">
+          <button type="button" id="open-preaccess-btn" class="action-link cursor-pointer" data-magnetic>
             <a class="move-text" href="https://forms.gle/VD1d3Dr4CkhKu9y69" target="_blank">Minta Pre-Akses</a>
             <a class="move-arrow" href="https://forms.gle/VD1d3Dr4CkhKu9y69" target="_blank"></a>
           </button>
         </div>
 
         <!-- Metric Numbers: Pure Typography, No Cards -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-slate-300">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-slate-300" data-aos="fade-up" data-aos-delay="250">
           <div>
-            <div class="text-3xl font-extrabold text-[#0f172a] font-mono">Rp 250</div>
+            <div class="text-3xl font-extrabold text-[#0f172a] font-mono">
+              <span data-counter data-target="250" data-prefix="Rp ">Rp 250</span>
+            </div>
             <div class="text-xs text-[#64748b] mt-1 font-medium">Per GB / bulan riil</div>
           </div>
           <div>
-            <div class="text-3xl font-extrabold text-[#06b6d4] font-mono">0 CORB</div>
+            <div class="text-3xl font-extrabold text-[#06b6d4] font-mono">
+              <span data-counter data-target="0" data-suffix=" CORB">0 CORB</span>
+            </div>
             <div class="text-xs text-[#64748b] mt-1 font-medium">Bebas integrasi web</div>
           </div>
           <div>
@@ -59,15 +63,17 @@
             <div class="text-xs text-[#64748b] mt-1 font-medium">File Transfer</div>
           </div>
           <div>
-            <div class="text-3xl font-extrabold text-[#0f172a] font-mono">99.9%</div>
+            <div class="text-3xl font-extrabold text-[#0f172a] font-mono">
+              <span data-counter data-target="99.9" data-suffix="%">99.9%</span>
+            </div>
             <div class="text-xs text-[#64748b] mt-1 font-medium">Target uptime server</div>
           </div>
         </div>
       </div>
 
       <!-- Right Column: Flat Architectural Web Drive Console (NO CARD, NO GRAY BORDER, NO RADIUS) -->
-      <div class="lg:col-span-5 pt-2">
-        <div class="bg-transparent">
+      <div class="lg:col-span-5 pt-2" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-transparent interactive-tilt p-5 border border-slate-200/80 bg-white/70 backdrop-blur-sm shadow-sm transition-all">
           <!-- Console Top Bar -->
           <div class="flex items-center justify-between pb-3 mb-4 border-b-2 border-[#0f172a]">
             <div class="font-mono text-xs text-emerald-700 bg-emerald-100 px-2 py-0.5 font-bold">
@@ -93,16 +99,16 @@
 
           <!-- Tag Filters: Flat Rectangular Chips -->
           <div class="flex items-center gap-1 overflow-x-auto pb-2 mb-4 text-xs font-mono">
-            <span class="px-2.5 py-1 bg-[#0f172a] text-white font-semibold text-[11px]">SEMUA</span>
-            <span class="px-2.5 py-1 bg-blue-100 text-blue-800 font-semibold text-[11px]">#SKRIPSI</span>
-            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 font-semibold text-[11px]">#INVOICE</span>
-            <span class="px-2.5 py-1 bg-amber-100 text-amber-800 font-semibold text-[11px]">#PENTING</span>
+            <span class="px-2.5 py-1 bg-[#0f172a] text-white font-semibold text-[11px] cursor-pointer hover:bg-slate-800 transition-colors">SEMUA</span>
+            <span class="px-2.5 py-1 bg-blue-100 text-blue-800 font-semibold text-[11px] cursor-pointer hover:bg-blue-200 transition-colors">#SKRIPSI</span>
+            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 font-semibold text-[11px] cursor-pointer hover:bg-emerald-200 transition-colors">#INVOICE</span>
+            <span class="px-2.5 py-1 bg-amber-100 text-amber-800 font-semibold text-[11px] cursor-pointer hover:bg-amber-200 transition-colors">#PENTING</span>
           </div>
 
           <!-- File Explorer Rows: Clean Technical Table, No Cards -->
           <div class="space-y-0 text-xs font-sans divide-y divide-slate-200">
             <!-- Row 1 -->
-            <div class="py-3 flex items-center justify-between hover:bg-slate-100/60 px-2 transition-colors">
+            <div class="py-3 flex items-center justify-between interactive-row px-2 transition-colors cursor-pointer">
               <div class="flex items-center gap-3 min-w-0">
                 <span class="w-6 h-6 bg-blue-600 text-white flex items-center justify-center text-[10px] font-mono font-bold flex-shrink-0">
                   PDF
@@ -116,7 +122,7 @@
             </div>
 
             <!-- Row 2: Private Vault -->
-            <div class="py-3 flex items-center justify-between bg-red-50 hover:bg-red-100 px-2 transition-colors">
+            <div class="py-3 flex items-center justify-between interactive-row bg-red-50/60 px-2 transition-colors cursor-pointer">
               <div class="flex items-center gap-3 min-w-0">
                 <span class="w-6 h-6 bg-[#07b1bd] text-[#042f2e] flex items-center justify-center text-[10px] font-mono font-bold flex-shrink-0">
                   PNG
@@ -130,7 +136,7 @@
             </div>
 
             <!-- Row 3 -->
-            <div class="py-3 flex items-center justify-between hover:bg-slate-100/60 px-2 transition-colors">
+            <div class="py-3 flex items-center justify-between interactive-row px-2 transition-colors cursor-pointer">
               <div class="flex items-center gap-3 min-w-0">
                 <span class="w-6 h-6 bg-indigo-600 text-white flex items-center justify-center text-[10px] font-mono font-bold flex-shrink-0">
                   MP4

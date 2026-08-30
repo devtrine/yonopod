@@ -1,0 +1,258 @@
+---
+// InteractiveFx.astro - Master interactive animation & cursor system
+---
+
+<!-- Ambient Spotlight / Torch Background Glow -->
+<div id="ambient-glow" aria-hidden="true"></div>
+
+<!-- Precision Custom Cursor Dot & Magnetic Ring -->
+<div id="cursor-ring" aria-hidden="true"></div>
+<div id="cursor-dot" aria-hidden="true"></div>
+
+<script>
+  // Self-initializing interactive animation engine
+  const initInteractiveFx = () => {
+    // 1. Accessibility check
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || !window.matchMedia('(hover: hover)').matches;
+
+    // Elements
+    const dot = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+    const glow = document.getElementById('ambient-glow');
+
+    // =========================================================================
+    // CURSOR FOLLOWER & SPOTLIGHT ENGINE (Desktop only)
+    // =========================================================================
+    if (!isTouchDevice && dot && ring && glow && !prefersReducedMotion) {
+      let mouseX = -100;
+      let mouseY = -100;
+      let dotX = -100;
+      let dotY = -100;
+      let ringX = -100;
+      let ringY = -100;
+      let glowX = -100;
+      let glowY = -100;
+      let isInitialized = false;
+
+      const onMouseMove = (e: MouseEvent) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!isInitialized) {
+          dotX = mouseX;
+          dotY = mouseY;
+          ringX = mouseX;
+          ringY = mouseY;
+          glowX = mouseX;
+          glowY = mouseY;
+          glow.style.opacity = '1';
+          document.body.classList.remove('cursor-hidden');
+          isInitialized = true;
+        }
+      };
+
+      const onMouseLeave = () => {
+        document.body.classList.add('cursor-hidden');
+      };
+
+      const onMouseEnter = () => {
+        document.body.classList.remove('cursor-hidden');
+      };
+
+      window.addEventListener('mousemove', onMouseMove, { passive: true });
+      document.addEventListener('mouseleave', onMouseLeave);
+      document.addEventListener('mouseenter', onMouseEnter);
+
+      // Lerp helper
+      const lerp = (start: number, end: number, factor: number) => start + (end - start) * factor;
+
+      // 60-120fps Animation Loop
+      const renderCursor = () => {
+        if (isInitialized) {
+          // Dot snaps fast (0.55)
+          dotX = lerp(dotX, mouseX, 0.55);
+          dotY = lerp(dotY, mouseY, 0.55);
+          dot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+
+          // Ring follows smoothly (0.16)
+          ringX = lerp(ringX, mouseX, 0.16);
+          ringY = lerp(ringY, mouseY, 0.16);
+          ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+
+          // Torch glow follows with gentle delay (0.08)
+          glowX = lerp(glowX, mouseX, 0.08);
+          glowY = lerp(glowY, mouseY, 0.08);
+          glow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0) translate(-50%, -50%)`;
+        }
+
+        requestAnimationFrame(renderCursor);
+      };
+
+      requestAnimationFrame(renderCursor);
+
+      // Hover detection on interactive elements
+      const interactiveSelector = 'a, button, input, select, textarea, .action-link, .interactive-tilt, [data-magnetic], [data-cursor-hover], .preset-topup-btn, .category';
+      
+      const setupCursorHover = () => {
+        const interactiveElements = document.querySelectorAll(interactiveSelector);
+        interactiveElements.forEach((el) => {
+          el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
+          el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
+        });
+      };
+
+      setupCursorHover();
+    }
+
+    // =========================================================================
+    // MAGNETIC PULL EFFECT ON CTA & BUTTONS
+    // =========================================================================
+    if (!isTouchDevice && !prefersReducedMotion) {
+      const magneticElements = document.querySelectorAll<HTMLElement>('[data-magnetic], .action-btn-primary, .action-link');
+      
+      magneticElements.forEach((el) => {
+        el.addEventListener('mousemove', (e: MouseEvent) => {
+          const rect = el.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          
+          const deltaX = (e.clientX - centerX) * 0.22;
+          const deltaY = (e.clientY - centerY) * 0.22;
+          
+          // Clamp within 12px for subtle architectural restraint
+          const clampX = Math.max(-12, Math.min(12, deltaX));
+          const clampY = Math.max(-10, Math.min(10, deltaY));
+
+          el.style.transform = `translate3d(${clampX}px, ${clampY}px, 0)`;
+        });
+
+        el.addEventListener('mouseleave', () => {
+          el.style.transform = 'translate3d(0, 0, 0)';
+        });
+      });
+    }
+
+    // =========================================================================
+    // 3D MICRO-TILT ON FEATURE CARDS & PANELS
+    // =========================================================================
+    if (!isTouchDevice && !prefersReducedMotion) {
+      const tiltCards = document.querySelectorAll<HTMLElement>('[data-tilt], .interactive-tilt');
+
+      tiltCards.forEach((card) => {
+        card.addEventListener('mousemove', (e: MouseEvent) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          // Micro tilt angle (-4 to +4 degrees)
+          const rotateX = ((y - centerY) / centerY) * -4;
+          const rotateY = ((x - centerX) / centerX) * 4;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.012, 1.012, 1.012)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        });
+      });
+    }
+
+    // =========================================================================
+    // ANIMATED ON SCROLL (AOS) WITH INTERSECTION OBSERVER
+    // =========================================================================
+    const aosElements = document.querySelectorAll<HTMLElement>('[data-aos]');
+    
+    if (prefersReducedMotion) {
+      aosElements.forEach((el) => el.classList.add('aos-animate'));
+    } else if ('IntersectionObserver' in window) {
+      const aosObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('aos-animate');
+              aosObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px',
+        }
+      );
+
+      aosElements.forEach((el) => aosObserver.observe(el));
+    } else {
+      aosElements.forEach((el) => el.classList.add('aos-animate'));
+    }
+
+    // =========================================================================
+    // METRIC COUNTER ANIMATIONS ON SCROLL
+    // =========================================================================
+    const counterElements = document.querySelectorAll<HTMLElement>('[data-counter]');
+
+    const animateCounter = (el: HTMLElement) => {
+      const targetStr = el.getAttribute('data-target') || '0';
+      const targetNum = parseFloat(targetStr);
+      const prefix = el.getAttribute('data-prefix') || '';
+      const suffix = el.getAttribute('data-suffix') || '';
+      const decimals = targetStr.includes('.') ? targetStr.split('.')[1].length : 0;
+      const duration = 1400; // ms
+      const startTime = performance.now();
+
+      if (prefersReducedMotion) {
+        el.textContent = `${prefix}${targetNum.toFixed(decimals)}${suffix}`;
+        return;
+      }
+
+      const updateCounter = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease Out Cubic function for sharp deceleration
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentVal = progress >= 1 ? targetNum : targetNum * easeOut;
+
+        el.textContent = `${prefix}${currentVal.toFixed(decimals)}${suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        }
+      };
+
+      requestAnimationFrame(updateCounter);
+    };
+
+    if ('IntersectionObserver' in window) {
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target as HTMLElement);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      counterElements.forEach((el) => counterObserver.observe(el));
+    } else {
+      counterElements.forEach((el) => animateCounter(el));
+    }
+  };
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initInteractiveFx);
+  } else {
+    initInteractiveFx();
+  }
+
+  // Support client router / re-navigation if Astro view transitions are used
+  document.addEventListener('astro:page-load', initInteractiveFx);
+</script>
